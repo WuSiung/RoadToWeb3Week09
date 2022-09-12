@@ -97,7 +97,6 @@ async function getPrice(){
     const response = await fetch(`https://api.0x.org/swap/v1/price?${qs.stringify(params)}`);
     
     swapPriceJSON = await response.json();
-    console.log("Price: ", swapPriceJSON);
     
     document.getElementById("to_amount").value = swapPriceJSON.buyAmount / (10 ** currentTrade.to.decimals);
     document.getElementById("gas_estimate").innerHTML = swapPriceJSON.estimatedGas;
